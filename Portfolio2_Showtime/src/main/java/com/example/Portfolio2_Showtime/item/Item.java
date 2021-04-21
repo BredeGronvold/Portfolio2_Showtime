@@ -7,12 +7,16 @@ public class Item {
     private String name;
     private double price;
     private URL picture;
+    private String longDescription;
+    private String shortDescription;
 
-    public Item(int id, String name, double price, URL picture) {
+    public Item(int id, String name, double price, URL picture, String longDescription, String shortDescription) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.picture = picture;
+        this.longDescription=longDescription;
+        this.shortDescription=shortDescription;
     }
 
     public int getId() {
@@ -47,13 +51,31 @@ public class Item {
         this.picture = picture;
     }
 
+    public String getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
     @Override
     public String toString() {
-        return "ToSell{" +
+        return "Item{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", picture=" + picture +
+                ", longDescription='" + longDescription + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
                 '}';
     }
 }

@@ -1,9 +1,8 @@
 package com.example.Portfolio2_Showtime.item;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -30,16 +29,22 @@ public class ItemController {
         return itemServer.getItem(item_id);
     }
 
-    @GetMapping("/api/item/{item_name}")
+    @GetMapping("/api/items/{item_name}")
     public ArrayList<Item> getItemsByName(@PathVariable String item_name){
         return itemServer.getItemsByName(item_name);
     }
 
-    @GetMapping("/api/item/{item_URL}")
+    @GetMapping("/api/items/{item_URL}")
     public Item getItemByPic(@PathVariable URL item_URL){
         return itemServer.getItemByPic(item_URL);
     }
 
-    
+    @GetMapping("/api/items/{sortBy}")
+    public ArrayList<Item> sortItems(@PathVariable String sortBy){
+        return itemServer.sortedItems(sortBy);
+    }
+
+
+
 
 }

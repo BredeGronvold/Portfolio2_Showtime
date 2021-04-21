@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Portfolio2_Showtime" target="16" />
+      <module name="Portfolio2_Showtime" target="14" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
