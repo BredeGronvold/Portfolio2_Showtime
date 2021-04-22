@@ -10,11 +10,11 @@ public class Item {
     private String longDescription;
     private String shortDescription;
 
-    public Item(int id, String name, double price, URL picture, String longDescription, String shortDescription) {
+    public Item(int id, String name, double price,  String longDescription, String shortDescription) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.picture = picture;
+        //this.picture = picture;
         this.longDescription=longDescription;
         this.shortDescription=shortDescription;
     }
