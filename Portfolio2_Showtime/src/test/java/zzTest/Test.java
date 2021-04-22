@@ -1,15 +1,12 @@
-package com.example.Portfolio2_Showtime.zzTest;
+package zzTest;
 
 import com.example.Portfolio2_Showtime.item.Item;
 
-import java.io.UTFDataFormatException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Test {
-    /*public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args){
         ArrayList<Item> items = new ArrayList<>(Arrays.asList(
                 new Item(0, "a", 22.4, "de", "de"),
                 new Item(1, "q", 22.4, "de", "de"),
@@ -39,17 +36,10 @@ public class Test {
             }
         }
 
-        for(int i = 0; i<items.size();i++){
-            for(int j = i+1)
-        }
 
         for(Item element : list){
             returnList.add(element);
+            System.out.println(element.getName());
         }
-
-        for(Item it : returnList){
-            System.out.println(it.getName());
-        }
-
-    }*/
+    }
 }

@@ -9,11 +9,11 @@ import java.util.Arrays;
 @Service
 public class ItemServer {
     private static ArrayList<Item> savedItems = new ArrayList(Arrays.asList(
-            new Item(0,"Item0",4.20,"long description","short description"),
-            new Item(1,"Item1",4.20,"long description","short description"),
+            new Item(0,"Item4",4.20,"long description","short description"),
+            new Item(1,"Item9",4.20,"long description","short description"),
             new Item(2,"Item2",4.20,"long description","short description"),
             new Item(3,"Item3",4.20,"long description","short description"),
-            new Item(4,"Item4",4.20,"long description","short description")
+            new Item(4,"Item7",4.20,"long description","short description")
     ));
 
     public ArrayList<Item> getAllItems() {
@@ -49,27 +49,30 @@ public class ItemServer {
     }
 
     public ArrayList<Item> sortedItems(String sortBy) {
-        if (sortBy.equals("Name")) sortByName();
+        if (sortBy.equals("Name")) return sortByName();
 
         return savedItems;
     }
 
-    public void sortByName() {
-        String[] list = new String[savedItems.size()];
-        for (int i = 0; i < savedItems.size(); i++) {
-            list[i] = savedItems.get(i).getName();
+    public ArrayList<Item> sortByName() {
+        ArrayList<Item> returnList = new ArrayList<>();
+        Item[] list = new Item[savedItems.size()];
+        for(int i = 0; i<savedItems.size();i++){
+            list[i]=savedItems.get(i);
         }
-
         for (int i = 0; i < list.length; i++) {
-            for (int j = i + 1 + 1; j < list.length; j++) {
-                if (list[i].compareTo(list[j])>0) {
-                    String bytt = list[i];
-                    list[i] = list[j];
-                    list[j] = bytt;
+            for (int j = i + 1; j < list.length; j++) {
+                if(list[i].getName().compareTo(list[j].getName())>0){
+                    Item it = list[i];
+                    list[i]=list[j];
+                    list[j]=it;
                 }
             }
-
-
         }
+
+        for(Item element : list){
+            returnList.add(element);
+        }
+        return returnList;
     }
 }
