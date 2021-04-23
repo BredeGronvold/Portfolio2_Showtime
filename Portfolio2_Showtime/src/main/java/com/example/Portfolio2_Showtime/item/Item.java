@@ -7,16 +7,15 @@ public class Item {
     private String name;
     private double price;
     private URL picture;
-    private String longDescription;
     private String shortDescription;
+    private String longDescription;
 
-    public Item(int id, String name, double price,  String longDescription, String shortDescription) {
-        this.id = id;
+    public Item(String name, double price, String shortDescription, String longDescription) {
         this.name = name;
         this.price = price;
         //this.picture = picture;
-        this.longDescription=longDescription;
         this.shortDescription=shortDescription;
+        this.longDescription=longDescription;
     }
 
     public int getId() {

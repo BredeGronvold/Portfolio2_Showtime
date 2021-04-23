@@ -38,8 +38,8 @@ public class ItemController {
         return itemServer.getItemByPic(item_URL);
     }
 
-    @GetMapping("/api/itemsSorted/{sortBy}")
-    public ArrayList<Item> sortItems(@PathVariable String sortBy){
-        return itemServer.sortedItems(sortBy);
+    @PostMapping("/api/addItem")
+    public Item addItem(@RequestBody Item item){
+        return itemServer.addItem(item);
     }
 }
