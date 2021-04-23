@@ -1,8 +1,24 @@
 package com.example.Portfolio2_Showtime.item;
 
+import jdk.jfr.Name;
+
+import javax.persistence.*;
 import java.net.URL;
 
+/*@Entity
+@Table*/
 public class Item {
+
+    /*@Id
+    @SequenceGenerator(
+            name = "item_sequence",
+            sequenceName = "item_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "item_sequence"
+    )*/
     private int id;
     private String name;
     private double price;
@@ -10,10 +26,15 @@ public class Item {
     private String shortDescription;
     private String longDescription;
 
-    public Item(String name, double price, String shortDescription, String longDescription) {
+    public Item() {
+
+    }
+
+    public Item(int id, String name, double price, URL picture, String shortDescription, String longDescription) {
+        this.id = id;
         this.name = name;
         this.price = price;
-        //this.picture = picture;
+        this.picture = picture;
         this.shortDescription=shortDescription;
         this.longDescription=longDescription;
     }

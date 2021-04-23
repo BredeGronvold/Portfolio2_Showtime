@@ -1,3 +1,4 @@
+/*
 package com.example.Portfolio2_Showtime.security;
 
 import org.springframework.context.annotation.Configuration;
@@ -18,3 +19,4 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic();
     }
 }
+*/
