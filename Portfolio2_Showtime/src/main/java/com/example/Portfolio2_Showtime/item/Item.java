@@ -3,7 +3,6 @@ package com.example.Portfolio2_Showtime.item;
 import jdk.jfr.Name;
 
 import javax.persistence.*;
-import java.net.URL;
 
 /*@Entity
 @Table*/
@@ -22,7 +21,7 @@ public class Item {
     private int id;
     private String name;
     private double price;
-    private URL picture;
+    private String pictureURL;
     private String shortDescription;
     private String longDescription;
 
@@ -30,11 +29,11 @@ public class Item {
 
     }
 
-    public Item(int id, String name, double price, URL picture, String shortDescription, String longDescription) {
+    public Item(int id, String name, double price, String pictureURL, String shortDescription, String longDescription) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.picture = picture;
+        this.pictureURL = pictureURL;
         this.shortDescription=shortDescription;
         this.longDescription=longDescription;
     }
@@ -63,12 +62,12 @@ public class Item {
         this.price = price;
     }
 
-    public URL getPicture() {
-        return picture;
+    public String getPictureURL() {
+        return pictureURL;
     }
 
-    public void setPicture(URL picture) {
-        this.picture = picture;
+    public void setPictureURL(String pictureURL) {
+        this.pictureURL = pictureURL;
     }
 
     public String getLongDescription() {
@@ -93,7 +92,7 @@ public class Item {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
-                ", picture=" + picture +
+                ", picture=" + pictureURL +
                 ", longDescription='" + longDescription + '\'' +
                 ", shortDescription='" + shortDescription + '\'' +
                 '}';
