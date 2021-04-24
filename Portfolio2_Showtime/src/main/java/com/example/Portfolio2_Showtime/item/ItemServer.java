@@ -57,11 +57,14 @@ public class ItemServer {
 
     private static int setID() {
         int number = (int) (Math.random() * 100000) + 100000;
-        for (Item element : savedItems) {
-            if (element.getId() == number) {
-                setID();
+        /*if(!savedItems.isEmpty()) {
+            for (Item element : savedItems) {
+                if (element.getId() == number) {
+                    setID();
+                }
             }
-        }
+        }*/
+
         return number;
     }
 
