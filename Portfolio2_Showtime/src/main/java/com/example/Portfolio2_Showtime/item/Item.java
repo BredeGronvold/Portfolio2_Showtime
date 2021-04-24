@@ -34,8 +34,8 @@ public class Item {
         this.name = name;
         this.price = price;
         this.pictureURL = pictureURL;
-        this.shortDescription=shortDescription;
-        this.longDescription=longDescription;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
     }
 
     public int getId() {

@@ -3,19 +3,18 @@ package com.example.Portfolio2_Showtime.item;
 import org.springframework.stereotype.Service;
 
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
 @Service
 public class ItemServer {
     private static final ArrayList<Item> savedItems = new ArrayList<>(Arrays.asList(
-            new Item(setID(), "Tennisball", 5, "http://assets.stickpng.com/images/580b585b2edbce24c47b2b90.png", "short description", "long description"),
-            new Item(setID(), "Fotball", 5, "https://www.vhv.rs/dpng/d/39-396773_uefa-champions-league-ball-png-transparent-png.png", "short description", "long description"),
-            new Item(setID(), "Basketball", 5, "https://toppng.com/uploads/preview/basketball-ball-115470314151an4nwabq0.png", "short description", "long description"),
-            new Item(setID(), "Golfball", 5, "https://banner2.cleanpng.com/20180308/etw/kisspng-golf-ball-tee-football-golf-ball-png-clipart-5aa1fcf7c322e6.9936992215205654957993.jpg", "short description", "long description"),
-            new Item(setID(), "Amerikansk fotball", 5, "https://p.kindpng.com/picc/s/726-7265704_american-football-png-image-wilson-football-transparent-png.png", "short description", "long description"),
-            new Item(setID(), "Badeball", 5, "https://e1.pngegg.com/pngimages/919/351/png-clipart-multicolored-beach-ball-thumbnail.png", "short description", "long description")
+            new Item(setID(), "Volleyball", 5, "https://freepngimg.com/thumb/volleyball/28621-8-volleyball-free-download-thumb.png", "short description", "long description"),
+            new Item(setID(), "Fotball", 5, "https://www.premierleague.com/resources/prod/e1fd15c-3351/i/nike-ball-hub/index/21.png", "short description", "long description"),
+            new Item(setID(), "Basketball", 5, "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/NEBL-Spalding-basket-ball.png/769px-NEBL-Spalding-basket-ball.png", "short description", "long description"),
+            new Item(setID(), "Hockey puck", 5, "https://pngimg.com/uploads/hockey/hockey_PNG95.png", "short description", "long description"),
+            new Item(setID(), "Tennisball", 5, "https://assets.stickpng.com/images/580b585b2edbce24c47b2b90.png", "short description", "long description"),
+            new Item(setID(), "Amerikansk fotball", 5, "https://www.pngkey.com/png/full/166-1664900_american-football-transparent-background-png-american-football-ball.png", "short description", "long description")
     ));
 
 
@@ -57,7 +56,13 @@ public class ItemServer {
     }
 
     private static int setID() {
-        return (int) (Math.random() * 100000) + 100000;
+        int number = (int) (Math.random() * 100000) + 100000;
+        for (Item element : savedItems) {
+            if (element.getId() == number) {
+                setID();
+            }
+        }
+        return number;
     }
 
     public Item setPic(int item_id, String url) {
@@ -74,4 +79,13 @@ public class ItemServer {
         return string.replace("\"", "");
     }
 
+    public ArrayList<Item> deleteItem(int id) {
+        for (Item element : savedItems) {
+            if (element.getId() == id) {
+                savedItems.remove(element);
+                break;
+            }
+        }
+        return savedItems;
+    }
 }

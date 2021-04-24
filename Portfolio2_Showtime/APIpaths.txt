@@ -1,0 +1,11 @@
+ITEM:
+get All Items: "/api/items"
+get one item by ID: "/api/itemsID/{item_id}"
+get all items by name: "/api/itemsName/{item_name}"
+get one item by URL: "/api/itemsURL/{item_URL}"
+set a new pic to an Item: "/api/pic/{item_id}" (Body: String url)
+
+ADMIN:
+add one item: "/api/addItem" (Body: Item item)
+delete one item: "/api/deleteItem" (Body: int id)
+boolean log in: "/api/login" (Body: Admin admin)

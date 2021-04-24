@@ -6,7 +6,11 @@ public class Admin {
 
     private String username;
     private String password;
-    private Item itemsMade;
+
+    public Admin(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public String getUsername() {
         return username;
@@ -24,20 +28,12 @@ public class Admin {
         this.password = password;
     }
 
-    public Item getItemsMade() {
-        return itemsMade;
-    }
-
-    public void setItemsMade(Item itemsMade) {
-        this.itemsMade = itemsMade;
-    }
 
     @Override
     public String toString() {
         return "Admin{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", itemsMade=" + itemsMade +
                 '}';
     }
 }

@@ -8,22 +8,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+
 
 @RestController
 public class AdminController {
 
-    private final ItemServer itemServer;
     private final AdminServer adminServer;
+    private final ItemServer itemServer;
 
     @Autowired
-    public AdminController(ItemServer itemServer, AdminServer adminServer){
-        this.itemServer=itemServer;
+    public AdminController(AdminServer adminServer, ItemServer itemServer){
         this.adminServer=adminServer;
+        this.itemServer=itemServer;
     }
 
     @PostMapping("/api/addItem")
     public Item addItem(@RequestBody Item item){
         return itemServer.addItem(item);
+    }
+
+    @PostMapping("/api/deleteItem")
+    public ArrayList<Item> deleteItem(@RequestBody int id){
+        return itemServer.deleteItem(id);
     }
 
     @PostMapping("/api/login")

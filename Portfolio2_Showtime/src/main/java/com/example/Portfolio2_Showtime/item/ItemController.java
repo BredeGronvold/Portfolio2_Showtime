@@ -36,11 +36,6 @@ public class ItemController {
         return itemServer.getItemByPic(item_URL);
     }
 
-    @PostMapping("/api/addItem")
-    public Item addItem(@RequestBody Item item){
-        return itemServer.addItem(item);
-    }
-
     @PostMapping("/api/pic/{item_id}")
     public Item setPic(@PathVariable int item_id, @RequestBody String url){
         return itemServer.setPic(item_id, url);
