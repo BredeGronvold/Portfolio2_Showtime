@@ -4,11 +4,11 @@ import jdk.jfr.Name;
 
 import javax.persistence.*;
 
-/*@Entity
-@Table*/
+@Entity
+@Table
 public class Item {
 
-    /*@Id
+    @Id
     @SequenceGenerator(
             name = "item_sequence",
             sequenceName = "item_sequence",
@@ -17,7 +17,7 @@ public class Item {
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "item_sequence"
-    )*/
+    )
     private int id;
     private String name;
     private double price;
