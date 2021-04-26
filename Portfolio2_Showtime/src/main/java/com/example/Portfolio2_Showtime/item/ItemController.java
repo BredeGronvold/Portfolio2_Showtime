@@ -3,6 +3,8 @@ package com.example.Portfolio2_Showtime.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 @RestController
@@ -17,7 +19,7 @@ public class ItemController {
     }
 
     @GetMapping("/api/items")
-    public ArrayList<Item> getItems() {
+    public ArrayList<Item> getItems() throws SQLException {
         return itemServer.getAllItems();
     }
 

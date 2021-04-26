@@ -1,14 +1,13 @@
 package com.example.Portfolio2_Showtime.item;
 
-import jdk.jfr.Name;
 
-import javax.persistence.*;
+/*import javax.persistence.*;*/
 
-@Entity
-@Table
+/*@Entity
+@Table*/
 public class Item {
 
-    @Id
+/*    @Id
     @SequenceGenerator(
             name = "item_sequence",
             sequenceName = "item_sequence",
@@ -17,25 +16,23 @@ public class Item {
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "item_sequence"
-    )
+    )*/
     private int id;
     private String name;
     private double price;
     private String pictureURL;
-    private String shortDescription;
-    private String longDescription;
+    private String description;
 
     public Item() {
 
     }
 
-    public Item(int id, String name, double price, String pictureURL, String shortDescription, String longDescription) {
+    public Item(int id, String name, double price, String pictureURL, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.pictureURL = pictureURL;
-        this.shortDescription = shortDescription;
-        this.longDescription = longDescription;
+        this.description = description;
     }
 
     public int getId() {
@@ -70,20 +67,12 @@ public class Item {
         this.pictureURL = pictureURL;
     }
 
-    public String getLongDescription() {
-        return longDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setLongDescription(String longDescription) {
-        this.longDescription = longDescription;
-    }
-
-    public String getShortDescription() {
-        return shortDescription;
-    }
-
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -92,9 +81,8 @@ public class Item {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
-                ", picture=" + pictureURL +
-                ", longDescription='" + longDescription + '\'' +
-                ", shortDescription='" + shortDescription + '\'' +
+                ", pictureURL='" + pictureURL + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

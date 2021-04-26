@@ -2,12 +2,12 @@ package com.example.Portfolio2_Showtime.admin;
 
 import com.example.Portfolio2_Showtime.item.Item;
 
-import javax.persistence.*;
+/*import javax.persistence.*;*/
 
-@Entity
-@Table
+/*@Entity
+@Table*/
 public class Admin {
-    @Id
+/*    @Id
     @SequenceGenerator(
             name = "admin_sequence",
             sequenceName = "admin_sequence",
@@ -16,7 +16,7 @@ public class Admin {
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "admin_sequence"
-    )
+    )*/
 
     private String username;
     private String password;
