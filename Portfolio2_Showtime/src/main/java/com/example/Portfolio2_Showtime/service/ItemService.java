@@ -1,5 +1,6 @@
-package com.example.Portfolio2_Showtime.item;
+package com.example.Portfolio2_Showtime.service;
 
+import com.example.Portfolio2_Showtime.item.Item;
 import org.springframework.stereotype.Service;
 
 
@@ -8,14 +9,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Service
-public class ItemServer {
+public class ItemService {
     private static final ArrayList<Item> savedItems = new ArrayList<>(Arrays.asList(
-            new Item(setIDFirst(), "Volleyball", 5, "https://freepngimg.com/thumb/volleyball/28621-8-volleyball-free-download-thumb.png", "long description"),
-            new Item(setIDFirst(), "Fotball", 5, "https://www.premierleague.com/resources/prod/e1fd15c-3351/i/nike-ball-hub/index/21.png", "long description"),
-            new Item(setIDFirst(), "Basketball", 5, "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/NEBL-Spalding-basket-ball.png/769px-NEBL-Spalding-basket-ball.png","long description"),
-            new Item(setIDFirst(), "Hockey puck", 5, "https://pngimg.com/uploads/hockey/hockey_PNG95.png","long description"),
-            new Item(setIDFirst(), "Tennisball", 5, "https://assets.stickpng.com/images/580b585b2edbce24c47b2b90.png","long description"),
-            new Item(setIDFirst(), "Amerikansk fotball", 5, "https://www.pngkey.com/png/full/166-1664900_american-football-transparent-background-png-american-football-ball.png", "long description")
+            new Item("Volleyball", 5, "https://freepngimg.com/thumb/volleyball/28621-8-volleyball-free-download-thumb.png", "long description"),
+            new Item("Fotball", 5, "https://www.premierleague.com/resources/prod/e1fd15c-3351/i/nike-ball-hub/index/21.png", "long description"),
+            new Item("Basketball", 5, "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/NEBL-Spalding-basket-ball.png/769px-NEBL-Spalding-basket-ball.png","long description"),
+            new Item("Hockey puck", 5, "https://pngimg.com/uploads/hockey/hockey_PNG95.png","long description"),
+            new Item("Tennisball", 5, "https://assets.stickpng.com/images/580b585b2edbce24c47b2b90.png","long description"),
+            new Item("Amerikansk fotball", 5, "https://www.pngkey.com/png/full/166-1664900_american-football-transparent-background-png-american-football-ball.png", "long description")
     ));
 
 /*    private final String database = "jdbc:postgresql://localhost:5432/skytjenester";
@@ -52,43 +53,11 @@ public class ItemServer {
         return null;
     }
 
-    public ArrayList<Item> getItemsByName(String item_name) {
-        ArrayList<Item> itemNames = new ArrayList<>();
-        for (Item item : savedItems) {
-            if (item.getName().contains(item_name)) {
-                itemNames.add(item);
-            }
-        }
-        return itemNames;
-    }
-
-    public Item getItemByPic(String item_url) {
-        for (Item item : savedItems)
-            if (item.getPictureURL().equals(item_url)) {
-                return item;
-            }
-        return null;
-    }
-
     public Item addItem(Item item) {
-        item.setId(setID());
         savedItems.add(item);
         return item;
     }
 
-    private static int setID() {
-        int number = (int) (Math.random() * 100000) + 100000;
-        for (Item element : savedItems) {
-            if (element.getId() == number) {
-                setID();
-            }
-        }
-        return number;
-    }
-
-    private static int setIDFirst() {
-        return (int) (Math.random() * 100000) + 100000;
-    }
 
     public Item setPic(int item_id, String url) {
         for (Item item : savedItems) {

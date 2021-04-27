@@ -27,8 +27,8 @@ public class Item {
 
     }
 
-    public Item(int id, String name, double price, String pictureURL, String description) {
-        this.id = id;
+    public Item(String name, double price, String pictureURL, String description) {
+
         this.name = name;
         this.price = price;
         this.pictureURL = pictureURL;
