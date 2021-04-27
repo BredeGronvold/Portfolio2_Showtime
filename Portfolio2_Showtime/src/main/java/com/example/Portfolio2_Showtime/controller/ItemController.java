@@ -1,7 +1,7 @@
 package com.example.Portfolio2_Showtime.controller;
 
 
-import com.example.Portfolio2_Showtime.item.Item;
+import com.example.Portfolio2_Showtime.model.Item;
 import com.example.Portfolio2_Showtime.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class ItemController {
@@ -22,7 +23,7 @@ public class ItemController {
     }
 
     @GetMapping("/api/items")
-    public ArrayList<Item> getItems() throws SQLException {
+    public List<Item> getItems() throws SQLException {
         return itemService.getAllItems();
     }
 
@@ -40,7 +41,7 @@ public class ItemController {
 
     @PreAuthorize("hasRole('Admin')")
     @DeleteMapping("/api/items/delete")
-    public ArrayList<Item> deleteItem(@RequestBody int id){
+    public List<Item> deleteItem(@RequestBody int id){
         return itemService.deleteItem(id);
     }
 }

@@ -1,6 +1,6 @@
 package com.example.Portfolio2_Showtime.service;
 
-import com.example.Portfolio2_Showtime.admin.Admin;
+import com.example.Portfolio2_Showtime.model.Admin;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

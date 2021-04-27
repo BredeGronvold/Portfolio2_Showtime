@@ -1,16 +1,17 @@
 package com.example.Portfolio2_Showtime.service;
 
-import com.example.Portfolio2_Showtime.item.Item;
+import com.example.Portfolio2_Showtime.model.Item;
 import org.springframework.stereotype.Service;
 
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class ItemService {
-    private static final ArrayList<Item> savedItems = new ArrayList<>(Arrays.asList(
+    ArrayList<Item> savedItems = new ArrayList<>(Arrays.asList(
             new Item("Volleyball", 5, "https://freepngimg.com/thumb/volleyball/28621-8-volleyball-free-download-thumb.png", "long description"),
             new Item("Fotball", 5, "https://www.premierleague.com/resources/prod/e1fd15c-3351/i/nike-ball-hub/index/21.png", "long description"),
             new Item("Basketball", 5, "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/NEBL-Spalding-basket-ball.png/769px-NEBL-Spalding-basket-ball.png","long description"),
@@ -26,7 +27,7 @@ public class ItemService {
 
     //https://www.codejava.net/java-se/jdbc/connect-to-postgresql-database-server-via-jdbc
 
-    public ArrayList<Item> getAllItems() throws SQLException {
+    public List<Item> getAllItems() throws SQLException {
         /*Connection connection = DriverManager.getConnection(database,username,password);
 
         String sql = "SELECT * FROM skytjenester";
@@ -73,7 +74,7 @@ public class ItemService {
         return string.replace("\"", "");
     }
 
-    public ArrayList<Item> deleteItem(int id) {
+    public List<Item> deleteItem(int id) {
         for (Item element : savedItems) {
             if (element.getId() == id) {
                 savedItems.remove(element);

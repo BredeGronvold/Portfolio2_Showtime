@@ -1,6 +1,4 @@
-package com.example.Portfolio2_Showtime.order;
-
-import com.example.Portfolio2_Showtime.item.Item;
+package com.example.Portfolio2_Showtime.model;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
 package com.example.Portfolio2_Showtime.controller;
 
-import com.example.Portfolio2_Showtime.admin.Admin;
+import com.example.Portfolio2_Showtime.model.Admin;
 import com.example.Portfolio2_Showtime.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
