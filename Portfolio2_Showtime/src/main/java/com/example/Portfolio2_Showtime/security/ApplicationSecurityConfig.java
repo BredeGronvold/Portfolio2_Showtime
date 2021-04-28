@@ -1,4 +1,3 @@
-
 package com.example.Portfolio2_Showtime.security;
 
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +13,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/","index","/css/*","/js/*","/home","/api/*")
+                .antMatchers("/","index","/css/*","/js/*","/home","/api/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "items")
+@Table
 @NoArgsConstructor          //NoArgsConstructor, til hjelp for å lese fra databasen
 @Data                       //legger inn metoder for typen
 public class Item {
