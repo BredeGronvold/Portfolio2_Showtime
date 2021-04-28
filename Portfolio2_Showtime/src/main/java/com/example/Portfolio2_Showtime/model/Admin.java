@@ -4,7 +4,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "admin")
+//@Table(name = "admin")
 @NoArgsConstructor
 @Data
 public class Admin {
