@@ -33,8 +33,8 @@ public class ItemController {
     }
 
     @PreAuthorize("hasRole('Admin')")
-    @DeleteMapping("/api/items/delete")
-    public void deleteItem(@RequestBody Long id){
+    @DeleteMapping("/api/items/delete/{id}")
+    public void deleteItem(@PathVariable Long id){
         itemService.deleteItem(id);
     }
 }

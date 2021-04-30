@@ -23,6 +23,7 @@ public class ItemService {
     }
 
     public Item createItem(Item item) {
+        if(item.getPictureURL()==null) item.setPictureURL("https://lh3.googleusercontent.com/proxy/u1vccwyZoSA68jUpFsKmFCEH8YIRIiWy5JbCfBbA3nyDKkgTERUvvLN0ijgH3hzY57crUKtekRVzjwt0sy0kn20Mqv4DLLrA8pJUqhhJ1dPf1VY");
         return itemRepository.save(item);
     }
 

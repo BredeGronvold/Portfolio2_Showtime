@@ -1,6 +1,7 @@
 package com.example.Portfolio2_Showtime.repositories;
 
 import com.example.Portfolio2_Showtime.model.Item;
+import com.example.Portfolio2_Showtime.service.ItemService;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import static java.util.Arrays.asList;
 public class DataSeeder implements CommandLineRunner {
 
     final ItemRepository itemRepository;
+    final ItemService itemService;
 
     @Override
     public void run(String... args){
@@ -29,7 +31,6 @@ public class DataSeeder implements CommandLineRunner {
                 new Item("Tennis ball", 35, "https://assets.stickpng.com/images/580b585b2edbce24c47b2b90.png", "Description"),
                 new Item("American football", 550, "https://www.pngkey.com/png/full/166-1664900_american-football-transparent-background-png-american-football-ball.png", "Description")
         );
-
         items.forEach(item -> itemRepository.save(item));
     }
 }

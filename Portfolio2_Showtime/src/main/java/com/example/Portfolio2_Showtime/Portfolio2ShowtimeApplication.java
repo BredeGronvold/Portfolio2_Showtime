@@ -1,6 +1,6 @@
 package com.example.Portfolio2_Showtime;
 
-import com.example.Portfolio2_Showtime.security.ApplicationSecurityConfig;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
