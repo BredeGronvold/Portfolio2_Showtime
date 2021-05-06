@@ -20,13 +20,15 @@ public class Item {
     private String name;
     private double price;
     private String pictureURL;
-    private String description;
+    private String shortDescription;
+    private String longDescription;
 
 
-    public Item(String name, double price, String pictureURL, String description) {
+    public Item(String name, double price, String pictureURL, String shortDescription, String longDescription) {
         this.name = name;
         this.price = price;
         this.pictureURL = pictureURL;
-        this.description = description;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
     }
 }
