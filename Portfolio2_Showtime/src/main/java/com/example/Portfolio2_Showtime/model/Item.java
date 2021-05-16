@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.logging.Logger;
 
 @Entity
-@Table
+@Table(name = "items")
 @NoArgsConstructor          //NoArgsConstructor, til hjelp for å lese fra databasen
 @Data                       //legger inn metoder for typen
 public class Item {
@@ -18,16 +18,23 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name")
     private String name;
+    @Column(name = "price")
     private double price;
+    @Column(name = "picture")
     private String pictureURL;
-    private String description;
+    @Column(name = "longDescription")
+    private String longDescription;
+    @Column(name = "shortDescription")
+    private String shortDescription;
 
 
-    public Item(String name, double price, String pictureURL, String description) {
+    public Item(String name, double price, String pictureURL, String shortDescription, String longDescription) {
         this.name = name;
         this.price = price;
         this.pictureURL = pictureURL;
-        this.description = description;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
     }
 }
