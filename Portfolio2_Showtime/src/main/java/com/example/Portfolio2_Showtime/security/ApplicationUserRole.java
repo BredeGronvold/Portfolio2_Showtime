@@ -1,3 +1,4 @@
+/*
 
 package com.example.Portfolio2_Showtime.security;
 
@@ -20,4 +21,4 @@ public enum ApplicationUserRole {
     public Set<ApplicationUserPermission> getPermissions(){
         return permissions;
     }
-}
+}*/

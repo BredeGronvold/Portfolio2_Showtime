@@ -1,3 +1,4 @@
+
 package com.example.Portfolio2_Showtime.security;
 
 import org.springframework.stereotype.Component;
@@ -13,6 +14,7 @@ import java.io.IOException;
 /** Used code from the following link: https://stackoverflow.com/questions/36809528/spring-boot-cors-filter-cors-preflight-channel-did-not-succeed
  * Solution provided by alexanoid.
  */
+
 @Component
 public class CORSFilter extends OncePerRequestFilter {
 
@@ -30,3 +32,4 @@ public class CORSFilter extends OncePerRequestFilter {
         }
     }
 }
+

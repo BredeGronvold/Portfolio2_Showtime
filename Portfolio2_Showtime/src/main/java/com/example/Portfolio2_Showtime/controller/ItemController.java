@@ -4,7 +4,6 @@ package com.example.Portfolio2_Showtime.controller;
 import com.example.Portfolio2_Showtime.model.Item;
 import com.example.Portfolio2_Showtime.service.ItemService;
 import lombok.AllArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,13 +25,11 @@ public class ItemController {
         return itemService.getItem(id);
     }
 
-    @PreAuthorize("hasRole('Admin')")
     @PostMapping("/api/items/create")
     public Item createItem(@RequestBody Item item){
         return itemService.createItem(item);
     }
 
-    @PreAuthorize("hasRole('Admin')")
     @DeleteMapping("/api/items/delete/{id}")
     public void deleteItem(@PathVariable Long id){
         itemService.deleteItem(id);
