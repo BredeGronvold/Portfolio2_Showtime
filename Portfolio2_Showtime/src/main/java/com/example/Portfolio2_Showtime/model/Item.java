@@ -18,16 +18,16 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "price")
+    @Column(name = "price", nullable = false)
     private double price;
-    @Column(name = "picture")
+    @Column(name = "picture", nullable = false)
     private String pictureURL;
-    @Column(name = "longDescription")
-    private String longDescription;
-    @Column(name = "shortDescription")
+    @Column(name = "shortDescription", nullable = false)
     private String shortDescription;
+    @Column(name = "longDescription", nullable = false)
+    private String longDescription;
 
 
     public Item(String name, double price, String pictureURL, String shortDescription, String longDescription) {

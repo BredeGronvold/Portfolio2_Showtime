@@ -17,23 +17,7 @@
         <java.version>14</java.version>
     </properties>
     <dependencies>
-        <!--PROMETHEUS MONITORING DEPENDENCIES START-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>io.micrometer</groupId>
-            <artifactId>micrometer-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.micrometer</groupId>
-            <artifactId>micrometer-registry-prometheus</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <!--PROMETHEUS MONITORING DEPENDENCIES END-->
 
         <!--<dependency>
             <groupId>org.springframework.boot</groupId>
@@ -60,11 +44,11 @@
             <version>30.1.1-jre</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
